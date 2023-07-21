@@ -16,8 +16,54 @@
 </head>
 
 <body class="font-narnoor">
+  <!-- lightbox -->
+  <!-- <section>
+    <div id="myModal" class="hidden fixed z-1 pt-28 left-0 top-0 w-full h-full bg-slate-900">
+      <span onclick="closeModal()">
+        <i class="fa-solid fa-xmark text-3xl cursor-pointer" style="color: #EEEDED;"></i>
+      </span>
+      <div class="relative bg-slate-50 m-auto p-0 w-11/12 max-w-6xl">
+        <div class="myBoxex">
+          <img src="./img/img1.jpg" class="w-full">
+        </div>
+        <div class="hidden myBoxex">
+          <img src="./img/img2.jpg" class="w-full">
+        </div>
+        <div class="hidden myBoxex">
+          <img src="./img/img3.jpg" class="w-full">
+        </div>
+        <div class="hidden myBoxex">
+          <img src="./img/img4.jpg" class="w-full">
+        </div>
+        <div class="hidden myBoxex">
+          <img src="./img/img5.jpg" class="w-full">
+        </div>
+        <div class="hidden myBoxex">
+          <img src="./img/img6.jpg" class="w-full">
+        </div>
+        <div class="hidden myBoxex">
+          <img src="./img/img7.jpg" class="w-full">
+        </div>
+        <div class="hidden myBoxex">
+          <img src="./img/img8.jpg" class="w-full">
+        </div>
+        <div class="hidden myBoxex">
+          <img src="./img/img9.jpg" class="w-full">
+        </div>
+        <div class="hidden myBoxex">
+          <img src="./img/img10.jpg" class="w-full">
+        </div>
+        <div class="hidden myBoxex">
+          <img src="./img/img11.jpg" class="w-full">
+        </div>
+        <div class="hidden myBoxex">
+          <img src="./img/img12.jpg" class="w-full">
+        </div>
+      </div>
+  </section> -->
+
   <section class="relative h-[30rem] flex items-center justify-center">
-    <img class="w-full h-full object-cover absolute" src="./img/cat.jpg" alt="search-img">
+    <img id="myImg" class="w-full h-full object-cover absolute" src="./img/cat.jpg" alt="search-img">
     <div class="relative z-[2] text-white">
       <h1 class="text-5xl font-semibold text-center">Catsels Image Gallery</h1>
       <p class="text-2xl text-center mt-3">Search any images within a second</p>
@@ -30,157 +76,13 @@
   </section>
 
   <section class=" container mx-auto mt-3 flex flex-col items-center">
-    <ul class="grid grid-cols-3 gap-4 mt-9">
-      <li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full" src="./img/img1.jpg" alt="img">
-        <div
-          class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
-          <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
-            <span class="text-lg">EVG Kowalievska</span>
-          </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
-        </div>
-      </li>
-      <li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full" src="./img/img2.jpg" alt="img">
-        <div
-          class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
-          <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
-            <span class="text-lg">Just a Couple Photos</span>
-          </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
-        </div>
-      </li>
-      <li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full" src="./img/img3.jpg" alt="img">
-        <div
-          class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
-          <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
-            <span class="text-lg">Timo Volz</span>
-          </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
-        </div>
-      </li>
-      <li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full" src="./img/img4.jpg" alt="img">
-        <div
-          class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
-          <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
-            <span class="text-lg">Matteo Petralli</span>
-          </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
-        </div>
-      </li>
-      <li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full" src="./img/img5.jpg" alt="img">
-        <div
-          class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
-          <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
-            <span class="text-lg">Dominika Roseclay</span>
-          </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
-        </div>
-      </li>
-      <li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full" src="./img/img6.jpg" alt="img">
-        <div
-          class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
-          <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
-            <span class="text-lg">Lina Kivaka</span>
-          </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
-        </div>
-      </li>
-      <li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full" src="./img/img7.jpg" alt="img">
-        <div
-          class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
-          <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
-            <span class="text-lg">Halil İbrahim CETIN</span>
-          </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
-        </div>
-      </li>
-      <li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full" src="./img/img8.jpg" alt="img">
-        <div
-          class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
-          <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
-            <span class="text-lg">Alice Castro</span>
-          </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
-        </div>
-      </li>
-      <li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full" src="./img/img9.jpg" alt="img">
-        <div
-          class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
-          <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
-            <span class="text-lg">witchagron buapa</span>
-          </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
-        </div>
-      </li>
-      <li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full" src="./img/img10.jpg" alt="img">
-        <div
-          class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
-          <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
-            <span class="text-lg">Rhea Hazel</span>
-          </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
-        </div>
-      </li>
-      <li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full" src="./img/img11.jpg" alt="img">
-        <div
-          class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
-          <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
-            <span class="text-lg">Kely</span>
-          </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
-        </div>
-      </li>
-      <li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full" src="./img/img12.jpg" alt="img">
-        <div
-          class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
-          <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
-            <span class="text-lg">FOX</span>
-          </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
-        </div>
-      </li>
-    </ul>
+    <ul class="images grid grid-cols-3 gap-4 mt-9"></ul>
     <button type="button"
-      class="text-black text-xl text-bold bg-gradient-to-r from-amber-50 via-orange-400 to-amber-700 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-amber-50 dark:focus:ring-orange-400 font-medium rounded-lg px-5 py-3 text-center mr-2 mb-10 mt-7">Load
+      class="text-black text-xl text-bold bg-gradient-to-r from-amber-50 via-orange-400 to-amber-700 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-amber-50 dark:focus:ring-orange-400 font-medium rounded-lg px-5 py-3 text-center mr-2 mb-10 mt-7 load-more">Load
       More</button>
   </section>
 
+  <script src="script.js"></script>
 </body>
 
 </html>
