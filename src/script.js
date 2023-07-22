@@ -68,8 +68,18 @@ const loadSearchImages = (e) => {
     }
 }
 
+const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    if (scrollPosition + windowHeight >= documentHeight - 100) {
+        loadMoreImages();
+    }
+}
+
 getImages(`https://api.pexels.com/v1/curated?page=${currentPage}&per_page=${perPage}`);
 /***************************************ABOUT API****************************************/
 
-loadMoreBtn.addEventListener("click", loadMoreImages);
+// loadMoreBtn.addEventListener("click", loadMoreImages);
 searchInput.addEventListener("keyup", loadSearchImages);
+window.addEventListener("scroll", handleScroll);
