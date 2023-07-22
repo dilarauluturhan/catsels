@@ -42,7 +42,7 @@ const hideLigthbox = () => {
 const generateHTML = (images) => {
     imgWrapper.innerHTML += images.map(img =>
         `<li onclick="showLightbox('${img.photographer}','${img.src.original}')" class="list-none mb-4 border rounded group relative flex">
-        <img class="cursor-pointer" src="${img.src.original}" alt="img">
+        <img class="cursor-pointer" src="${img.src.original}" alt="img" loading="lazy">
         <div
           class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
           <div class="text-amber-50">
