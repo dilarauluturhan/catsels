@@ -46,11 +46,11 @@ const generateHTML = (images) => {
         <div
           class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
           <div class="text-amber-50">
-            <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
+            <i class="fa-solid fa-camera text-xl mr-1.1 text-zinc-900"></i>
             <span class="text-lg">${img.photographer}</span>
           </div>
-          <button onclick="downloadImg('${img.src.original}');event.stopPropagation();" class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
-              style="color: #893c21;"></i></button>
+          <button onclick="downloadImg('${img.src.original}');event.stopPropagation();" class="px-1 py-1 text-xl bg-amber-50 text-zinc-900 border rounded"><i class="fa-solid fa-download"
+            ></i></button>
         </div>
       </li>`
     ).join("");
