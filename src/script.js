@@ -1,5 +1,6 @@
 const imgWrapper = document.querySelector(".images");
 const loadMoreBtn = document.querySelector(".load-more");
+const searchInput = document.querySelector(".search-box input")
 
 /***************************************ABOUT API****************************************/
 // api key
@@ -8,6 +9,8 @@ const apiKey = "FxdhBTu5tZkSczqAvVgOMQuCvUgbuP3xd9xGi78c2dsjSD9mK5xnwGCp";
 const perPage = 12;
 // "load more" butonuna tıkladığımda gelecek olan sayfa sayısı
 let currentPage = 1;
+// search'ün başlangıç değeri null
+let searchTerm = null;
 
 const generateHTML = (images) => {
     imgWrapper.innerHTML += images.map(img =>
@@ -32,19 +35,33 @@ const getImages = (apiURL) => {
     }).then(res => res.json()).then(data => {
         console.log(data);
         generateHTML(data.photos);
-    })
+    }).catch(() => alert("Failed to load images!"));
 }
 
 const loadMoreImages = () => {
     currentPage++;
     let apiURL = `https://api.pexels.com/v1/curated?page=${currentPage}&per_page=${perPage}`;
+    apiURL = searchTerm ? `https://api.pexels.com/v1/search?query=${searchTerm}&page=${currentPage}&per_page=${perPage}` : apiURL;
     getImages(apiURL);
+}
+
+const loadSearchImages = (e) => {
+    // 400 bad request(tarayıcının gönderdiği istek geçersiz) => search'te aramayı silip enter'a basınca bu hatayı aldım
+    if (e.target.value === "") return searchTerm = null;
+    if (e.key === "Enter") {
+        // console.log("Enter'a basıldı!");
+        currentPage = 1;
+        searchTerm = e.target.value;
+        imgWrapper.innerHTML = "";
+        getImages(`https://api.pexels.com/v1/search?query=${searchTerm}&page=${currentPage}&per_page=${perPage}`);
+    }
 }
 
 getImages(`https://api.pexels.com/v1/curated?page=${currentPage}&per_page=${perPage}`);
 /***************************************ABOUT API****************************************/
 
 loadMoreBtn.addEventListener("click", loadMoreImages);
+searchInput.addEventListener("keyup", loadSearchImages);
 
 
 // let openModal = () => {
