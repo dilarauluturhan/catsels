@@ -1,6 +1,9 @@
 const imgWrapper = document.querySelector(".images");
 const loadMoreBtn = document.querySelector(".load-more");
-const searchInput = document.querySelector(".search-box input")
+const searchInput = document.querySelector(".search-box input");
+const lightBox = document.querySelector(".lightbox");
+const closeBtn = lightBox.querySelector(".fa-xmark");
+const downloadImgBtn = lightBox.querySelector(".fa-download");
 
 /***************************************ABOUT API****************************************/
 // api key
@@ -23,17 +26,30 @@ const downloadImg = (imgURL) => {
     }).catch(() => alert("Failed to download image!"));
 }
 
+const showLightbox = (name, img) => {
+    lightBox.querySelector("img").src = img;
+    lightBox.querySelector("span").innerText = name;
+    downloadImgBtn.setAttribute("data-img", img);
+    lightBox.classList.add("show");
+    document.body.style.overflow = "hidden";
+}
+
+const hideLigthbox = () => {
+    lightBox.classList.remove("show");
+    document.body.style.overflow = "auto";
+}
+
 const generateHTML = (images) => {
     imgWrapper.innerHTML += images.map(img =>
-        `<li class="list-none mb-4 border rounded group relative flex">
-        <img class="w-full cursor-pointer" src="${img.src.original}" alt="img">
+        `<li onclick="showLightbox('${img.photographer}','${img.src.original}')" class="list-none mb-4 border rounded group relative flex">
+        <img class="cursor-pointer" src="${img.src.original}" alt="img">
         <div
           class="absolute bottom-0 bg-gradient-to-t from-slate-500 invisible group-hover:visible group-hover:ease-in duration-500 w-full px-3 py-3 flex items-center justify-between">
           <div class="text-amber-50">
             <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
             <span class="text-lg">${img.photographer}</span>
           </div>
-          <button onclick="downloadImg('${img.src.original}')" class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
+          <button onclick="downloadImg('${img.src.original}');event.stopPropagation();" class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
               style="color: #893c21;"></i></button>
         </div>
       </li>`
@@ -83,3 +99,5 @@ getImages(`https://api.pexels.com/v1/curated?page=${currentPage}&per_page=${perP
 // loadMoreBtn.addEventListener("click", loadMoreImages);
 searchInput.addEventListener("keyup", loadSearchImages);
 window.addEventListener("scroll", handleScroll);
+closeBtn.addEventListener("click", hideLigthbox);
+downloadImgBtn.addEventListener("click", (e) =>  downloadImg(e.target.dataset.img));
