@@ -12,6 +12,17 @@ let currentPage = 1;
 // search'ün başlangıç değeri null
 let searchTerm = null;
 
+const downloadImg = (imgURL) => {
+    // console.log(imgURL);
+    fetch(imgURL).then(res => res.blob()).then(file => {
+        // console.log(file)
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(file);
+        a.download = new Date().getTime();
+        a.click();
+    }).catch(() => alert("Failed to download image!"));
+}
+
 const generateHTML = (images) => {
     imgWrapper.innerHTML += images.map(img =>
         `<li class="list-none mb-4 border rounded group relative flex">
@@ -22,7 +33,7 @@ const generateHTML = (images) => {
             <i class="fa-solid fa-camera text-xl mr-1.1" style="color: #893c21;"></i>
             <span class="text-lg">${img.photographer}</span>
           </div>
-          <button class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
+          <button onclick="downloadImg('${img.src.original}')" class="px-1 py-1 text-xl bg-amber-50 border rounded"><i class="fa-solid fa-download"
               style="color: #893c21;"></i></button>
         </div>
       </li>`
@@ -62,35 +73,3 @@ getImages(`https://api.pexels.com/v1/curated?page=${currentPage}&per_page=${perP
 
 loadMoreBtn.addEventListener("click", loadMoreImages);
 searchInput.addEventListener("keyup", loadSearchImages);
-
-
-// let openModal = () => {
-//     // console.log("başarılı");
-//     document.getElementById("myModal").style.display = "block";
-// }
-
-// let closeModal = () => {
-//     document.getElementById("myModal").style.display = "none";
-// }
-
-// let lightBoxIndex = 1;
-// showLightBox(lightBoxIndex);
-
-// let plusLightBox = (n) => {
-//     showLightBox(lightBoxIndex += n);
-// }
-
-// let currentLightBox = (n) => {
-//     showLightBox(lightBoxIndex = n);
-// }
-
-// let showLightBox = (n) => {
-//     let i;
-//     let boxex = document.getElementsByClassName("myBoxex");
-//     if (n > boxex.length) { lightBoxIndex = 1 }
-//     if (n < 1) { lightBoxIndex = boxex.length }
-//     for (i = 0; i < boxex.length; i++) {
-//         boxex[i].style.display="none";
-//     }
-//     boxex[lightBoxIndex-1].style.display = "block";
-// }
