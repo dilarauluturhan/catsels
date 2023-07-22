@@ -7,12 +7,12 @@ module.exports = {
         narnoor: ['Narnoor', 'serif']
       },
       height: {
-        '30' : '30rem'
+        '30': '30rem'
       },
-      zIndex : {
-        '1' : '1',
+      zIndex: {
+        '1': '1',
         '2': '2',
-        '5' : '5'
+        '5': '5'
       }
     },
   },

@@ -13,8 +13,8 @@
 
 .lightbox .wrapper {
     position: absolute;
-    left: 39%;
-    top: 7%;
+    left: 16%;
+    top: 10%;
     transform: translate(-7%, -1%);
 }
 
@@ -39,6 +39,36 @@ header .photoInfo span {
 }
 
 .wrapper .preview-img .img {
-    width: 500px;
+    width: 400px;
     height: 650px;
+}
+
+/* md */
+@media (min-width: 768px) {
+    .lightbox .wrapper {
+        position: absolute;
+        left: 23%;
+        top: 5%;
+        transform: translate(-7%, -1%);
+    }
+
+    .wrapper .preview-img .img {
+        width: 500px;
+        height: 750px;
+    }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+    .lightbox .wrapper {
+        position: absolute;
+        left: 37%;
+        top: 5%;
+        transform: translate(-7%, -1%);
+    }
+
+    .wrapper .preview-img .img {
+        width: 550px;
+        height: 800px;
+    }
 }

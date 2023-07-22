@@ -22,12 +22,12 @@
     <div class="wrapper">
       <header>
         <div class="photoInfo">
-          <i class="fa-solid fa-camera text-2xl"></i>
-          <span class="text-2xl"></span>
+          <i class="fa-solid fa-camera text-base md:text-lg lg:text-2xl"></i>
+          <span class="text-base md:text-lg lg:text-2xl"></span>
         </div>
         <div class="buttons">
-          <i class="fa-solid fa-download text-2xl"></i>
-          <i class="fa-solid fa-xmark text-3xl"></i>
+          <i class="fa-solid fa-download text-base md:text-lg lg:text-2xl"></i>
+          <i class="fa-solid fa-xmark text-xl md:text-2xl lg:text-3xl"></i>
         </div>
       </header>
       <div class="preview-img">
@@ -37,21 +37,21 @@
   </div>
 
 
-  <section class="relative h-[30rem] flex items-center justify-center">
+  <section class="relative h-72 md:h-[30rem] flex items-center justify-center">
     <img id="myImg" class="w-full h-full object-cover absolute" src="./img/cat.jpg" alt="search-img">
     <div class="relative z-[2] text-white">
-      <h1 class="text-5xl font-semibold text-center">Catsels Image Gallery</h1>
-      <p class="text-2xl text-center mt-3">Search any images within a second</p>
-      <div class="h-16 mx-8 my-0 search-box">
-        <input class="w-full h-10 mt-3 border rounded-md outline-none pl-14 text-lg text-semibold text-black"
+      <h1 class="text-3xl md:text-5xl font-semibold text-center">Catsels Image Gallery</h1>
+      <p class="text-xl md:text-2xl text-center mt-3">Search any images within a second</p>
+      <div class="h-16 search-box">
+        <input class="w-full h-11 mt-3 border rounded-md outline-none pl-14 text-lg text-semibold text-black"
           type="text" placeholder="Search images..">
-        <i class="fa-solid fa-magnifying-glass absolute left-12 top-28 text-2xl" style="color: #893c21;"></i>
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-2/3 md:left-5 md:top-28 text-2xl" style="color: #893c21;"></i>
       </div>
     </div>
   </section>
 
-  <section class="container mx-auto mt-3 flex flex-col items-center">
-    <ul class="images grid grid-cols-3 gap-4 mt-9"></ul>
+  <section class="container mx-auto mt-3">
+    <ul class="images grid grid-cols-1 w-fit h-fit sm:grid sm:grid-cols-2 md:grid md:grid-cols-4 gap-3 mt-9"></ul>
     <!-- <button type="button"
       class="text-black text-xl text-bold bg-gradient-to-r from-amber-50 via-orange-400 to-amber-700 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-amber-50 dark:focus:ring-orange-400 font-medium rounded-lg px-5 py-3 text-center mr-2 mb-10 mt-7 load-more">Load
       More</button> -->
