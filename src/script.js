@@ -96,7 +96,6 @@ const handleScroll = () => {
 getImages(`https://api.pexels.com/v1/curated?page=${currentPage}&per_page=${perPage}`);
 /***************************************ABOUT API****************************************/
 
-// loadMoreBtn.addEventListener("click", loadMoreImages);
 searchInput.addEventListener("keyup", loadSearchImages);
 window.addEventListener("scroll", handleScroll);
 closeBtn.addEventListener("click", hideLigthbox);
